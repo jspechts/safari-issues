@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Web Socket Test</title>
+    <script type="text/javascript" src="websocket.js"></script>
+    <link rel="stylesheet" type="text/css" href="main.css" media="all" >
+</head>
+<body>
+WebSocket Echo #console
+<div id="console"></div>
+<div id="buttons">
+    <input id="connect" class="button" type="submit" name="connect" value="connect"/>
+    <input id="close" class="button" type="submit" name="close" value="close" disabled="disabled"/>
+    <input id="hello" class="button" type="submit" name="hello" value="send hello" disabled="disabled"/>
+</div>
+<script type="text/javascript">
+    $("connect").onclick = function () {
+        wstool.connect();
+        return false;
+    }
+    $("close").onclick = function () {
+        wstool.close();
+        return false;
+    }
+    $("hello").onclick = function () {
+        wstool.write("Hello There");
+        return false;
+    }
+</script>
+</body>
+</html>
